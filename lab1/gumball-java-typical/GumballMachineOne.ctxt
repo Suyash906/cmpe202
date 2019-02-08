@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=GumballMachineOne
+comment1.params=size
+comment1.target=GumballMachineOne(int)
+comment2.params=current_coin_value
+comment2.target=void\ setCurrentCoinValue(int)
+comment3.params=coin
+comment3.target=void\ insertCoin(int)
+comment4.params=
+comment4.target=void\ turnCrank()
+numComments=5
