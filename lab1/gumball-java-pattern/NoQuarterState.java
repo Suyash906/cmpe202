@@ -7,17 +7,17 @@ public class NoQuarterState implements State {
         this.gumballMachine = gumballMachine;
     }
  
-	public void insertQuarter() {
-		System.out.println("You inserted a quarter");
+	public void insertCoin() {
+		System.out.println("You inserted coin(s)");
 		gumballMachine.setState(gumballMachine.getHasQuarterState());
 	}
  
-	public void ejectQuarter() {
-		System.out.println("You haven't inserted a quarter");
+	public void ejectCoin() {
+		System.out.println("You haven't inserted a coin");
 	}
  
 	public void turnCrank() {
-		System.out.println("You turned, but there's no quarter");
+		System.out.println("You turned, but there's no coin");
 	 }
  
 	public void dispense() {
@@ -25,6 +25,6 @@ public class NoQuarterState implements State {
 	} 
  
 	public String toString() {
-		return "waiting for quarter";
+		return "waiting for coin";
 	}
 }
