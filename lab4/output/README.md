@@ -1,3 +1,4 @@
+<b>CRC Description </b>
 <center>
    <table border="1" style="border-collapse: collapse;text-align: center;">
       <tr style="width:300px;">
@@ -20,7 +21,7 @@
       </tr>
    </table>
    <br/>
-   <table cellpadding="10">
+   <table cellpadding="10" border = "0">
       <tr>
          <td>
             <table border="1" style="border-collapse: collapse;text-align: center;">
