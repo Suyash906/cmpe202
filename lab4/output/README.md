@@ -61,3 +61,12 @@
       </tr>
    </table>
 </center>
+<br/>
+<b> Problem approach </b>
+<ul>
+   <li>I have used chain of responsibility design pattern for the problem.</li> 
+   <li>The customer signup with the Queue manager with name, mobile and number of seats request.</li> 
+   <li>The table manager send the information when a table with specified number of seat is available.</li> 
+   <li>The queue manager acts as the handler who pass on the information to the top most customer satisfying the number of seats criteria.</li> 
+   <li>If the customer confirms then the table is allocated otherwise the information is passed to the next customer in queue.</li>    <li>Thus, the customers are in chain in this problem.</li>
+</ul>
