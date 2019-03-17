@@ -8,3 +8,7 @@
   <li>PrintPackingOrder class provides implementation for Packing Slip.</li>
   <li>FiveGuysBurger class has the main function which calls both function.</li>
 </ul>
+
+<b>Demo Output</b>
+
+<img src="DemoOutput.PNG"/>
