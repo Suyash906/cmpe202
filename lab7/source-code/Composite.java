@@ -1,4 +1,4 @@
-   
+       
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class Composite implements Component {
         description = d ;
     }
 
-	public void printDescription() {
+    public void printDescription() {
         System.out.println( description );
         for (Component obj  : components)
         {
@@ -20,17 +20,17 @@ public class Composite implements Component {
         }
     }
 
-	public void addChild(Component c) {
+    public void addChild(Component c) {
         components.add( c ) ;
-	}
-	 
-	public void removeChild(Component c) {
+    }
+     
+    public void removeChild(Component c) {
         components.remove(c) ;
-	}
-	 
-	public Component getChild(int i) {
-	    return components.get( i ) ;
-	}
-	 
+    }
+     
+    public Component getChild(int i) {
+        return components.get( i ) ;
+    }
+     
 }
  
