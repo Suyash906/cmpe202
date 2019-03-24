@@ -23,8 +23,8 @@ public class CheeseTopping extends LeafDecorator
     public void setOptions( String[] options )
     {
         this.options = options ;
-        if ( options.length > 1 )
-            this.price += (options.length+1) * 1.50 ;
+        if ( options.length > 0 )
+            this.price += options.length * 1.50 ;
     }
     
     public String getDescription() 

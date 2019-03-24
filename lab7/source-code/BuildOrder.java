@@ -1,145 +1,122 @@
 public class BuildOrder {
-    
-    
-    public static Component getFirstOrder()
+
+    public static Component getOrder()
     {
-        Composite order = new Composite( "\n\nOrder\n\n" ) ;
+        Composite order = new Composite( "Order" ) ;
 
-        CustomBurger customBurger = new CustomBurger( "Build Your Own Burger" ) ;
-        
-        // base price for 1/3 lb
-        Burger b = new Burger( "Burger Options" ) ;
-        String[] bo = { "Organic Bison*", "1/2lb.", "On A Bun" } ;//12 and 4
-        b.setOptions( bo ) ;
-        
-        // 1 cheese free, extra cheese +1.00
-        Cheese c = new Cheese( "Cheese Options" ) ;
-        String[] co = { "Yellow American", "Spicy Jalapeno Jack" } ;//1
-        c.setOptions( co ) ;
-        c.wrapDecorator( b ) ;
-        
-        //
-        CheeseTopping c1 = new CheeseTopping( "Premium Cheese Options" ) ;//1.5
-        String[] co1 = { "Danish Blue Cheese" } ;
-        c1.setOptions( co1 ) ;
-        c1.wrapDecorator( c ) ;
-        
-        
-        // 4 toppings free, extra +.75
-        Toppings t = new Toppings( "Toppings Options" ) ;
-        String[] to = { "Dill Pickle Chips", "Black Olives", "Spicy Pickles" } ;//nothing
-        t.setOptions( to ) ;
-        t.wrapDecorator( c1 ) ;
-        
-        // premium topping +1.50
-        Premium p = new Premium( "Premium Options" ) ;
-        String[] po = { "Marinated Tomatoes" } ;//3
-        p.setOptions( po ) ;
-        p.wrapDecorator( t ) ;
-        
-        //
-        Bun b1 = new Bun( "Bun Options" ) ;
-        String[] bo1 = { "Ciabatta (Vegan)" } ;
+        CustomBurger customBurger1 = new CustomBurger( "Build Your Own Burger" ) ;
+        // base price for 1/2 lb and Organic Bison*
+        Burger b1 = new Burger( "Burger Options" ) ;
+        String[] bo1 = { "Organic Bison*", "1/2lb.", "On A Bun" } ;
         b1.setOptions( bo1 ) ;
-        b1.wrapDecorator( p ) ;
-        
-        Side s1 = new Side( "Side Options" ) ;//3
-        String[] so1 = { "Shoestring Frice" } ;
-        s1.setOptions( so1 ) ;
-        s1.wrapDecorator( b1 ) ;
-        
-        // 1 sauce free, extra +.75
-        Sauce s = new Sauce( "Sauce Options" ) ;//0.75
-        String[] so = { "Mayonnaise", "Thai Peanut Sauce"} ;
-        s.setOptions( so ) ;
-        s.wrapDecorator( s1 ) ;
-        
-        
-        // Setup Custom Burger Ingredients
-        customBurger.setDecorator( s ) ;
-        customBurger.addChild( b ) ;
-        customBurger.addChild( c ) ;
-        customBurger.addChild( c1 ) ;
-        customBurger.addChild( s ) ;
-        customBurger.addChild( t ) ;
-        customBurger.addChild( p ) ;
-        customBurger.addChild( b1 ) ;
-        customBurger.addChild( s1 ) ;
-        
-        
-        // Add Custom Burger to the ORder
-        order.addChild( customBurger );
-        return order ;  
-    }
-    
-    
-    public static Component getSecondOrder()
-    {
-        Composite order = new Composite( "\n" ) ;
-
-        CustomBurger customBurger = new CustomBurger( "Build Your Own Burger" ) ;
-        // base price for 1/3 lb
-        Burger b = new Burger( "Burger Options" ) ;
-        String[] bo = { "Hormone & Antibiotic Free Beef", "1/3lb.", "On A Bun" } ;//9 for 1.3lb.
-        b.setOptions( bo ) ;
         // 1 cheese free, extra cheese +1.00
-        Cheese c = new Cheese( "Cheese Options" ) ;
-        String[] co = { "Smoked Gouda", "Greek Feta" } ;//1
-        c.setOptions( co ) ;
-        c.wrapDecorator( b ) ;
-        //
-        CheeseTopping c1 = new CheeseTopping( "Premium Cheese Options" ) ;//1.5
-        String[] co1 = { "Fresh Mozzarella" } ;
+        Cheese c1 = new Cheese( "Cheese Options" ) ;
+        String[] co1 = { "Yellow American", "Spicy Jalapeno Jack" } ;
         c1.setOptions( co1 ) ;
-        c1.wrapDecorator( c ) ;
-        // 4 toppings free, extra +.75
-        Toppings t = new Toppings( "Toppings Options" ) ;//0
-        String[] to = { "Creshed Peanuts" } ;
-        t.setOptions( to ) ;
-        t.wrapDecorator( c1 ) ;
-        // premium topping +1.50
-        Premium p = new Premium( "Premium Options" ) ;
-        String[] po = { "Sunny Side Up Egg*","Marinated Tomatoes" } ;//1.5+3
-        p.setOptions( po ) ;
-        p.wrapDecorator( t ) ;
-        //
-        Bun b1 = new Bun( "Bun Options" ) ;//1
-        String[] bo1 = { "Glutten-Free Bun" } ;
-        b1.setOptions( bo1 ) ;
-        b1.wrapDecorator( p ) ;
-        
-        Side s1 = new Side( "Side Options" ) ;//3
-        String[] so1 = { "Shoestring Frice" } ;
+        c1.wrapDecorator( b1 ) ;
+        // premium cheese +1.50
+        CheeseTopping pc1 = new CheeseTopping( "Premium Cheese Options" ) ;
+        String[] pco1 = { "Danish Blue Cheese"} ;
+        pc1.setOptions( pco1 ) ;
+        pc1.wrapDecorator( c1 ) ;
+        // 1 sauce free, extra +.50
+        Sauce s1 = new Sauce( "Sauce Options" ) ;
+        String[] so1 = { "Mayonnaise", "Thai Peanut Sauce" } ;
         s1.setOptions( so1 ) ;
-        s1.wrapDecorator( b1 ) ;
-        // 1 sauce free, extra +.75
-        Sauce s = new Sauce( "Sauce Options" ) ;//0
-        String[] so = { "Habanero Salsa" } ;
-        s.setOptions( so ) ;
-        s.wrapDecorator( s1 ) ;
+        s1.wrapDecorator( pc1 ) ;
+        // unlimited toppings free
+        Toppings t1 = new Toppings( "Toppings Options" ) ;
+        String[] to1 = { "Dill Pickle Chips", "Black Olives", "Spicy Pickles" } ;
+        t1.setOptions( to1 ) ;
+        t1.wrapDecorator( s1 ) ;
+        // premium topping, price based on selection
+        PremiumTopping pt1 = new PremiumTopping( "Premium Toppings Options" ) ;
+        String[] pto1 = { "Marinated Tomatoes" } ;
+        pt1.setOptions( pto1 ) ;
+        pt1.wrapDecorator( t1 ) ;
+        // bun, price based on selection
+        Bun bun1 = new Bun( "Bun Options" ) ;
+        String[] buno1 = { "Ciabatta (Vegan)" } ;
+        bun1.setOptions( buno1 ) ;
+        bun1.wrapDecorator( pt1 ) ;
+        //Side +3.00
+        Side side1 = new Side( "Side Options" ) ;
+        String[] sideo1 = { "Shoestring Fries" } ;
+        side1.setOptions( sideo1 ) ;
+        side1.wrapDecorator( bun1 ) ;
 
-        
         // Setup Custom Burger Ingredients
-        customBurger.setDecorator( s ) ;
-        customBurger.addChild( b ) ;
-        customBurger.addChild( c ) ;
-        customBurger.addChild( c1 ) ;
-        customBurger.addChild( s ) ;
-        customBurger.addChild( t ) ;
-        customBurger.addChild( p ) ;
-        customBurger.addChild( b1 ) ;
-        customBurger.addChild( s1 ) ;
-        
-        
+        customBurger1.setDecorator( side1 ) ;
+        customBurger1.addChild( b1 ) ;
+        customBurger1.addChild( c1 ) ;
+        customBurger1.addChild( pc1 ) ;
+        customBurger1.addChild( s1 ) ;
+        customBurger1.addChild( t1 ) ;
+        customBurger1.addChild( pt1 ) ;
+        customBurger1.addChild( bun1 ) ;
+        customBurger1.addChild( side1 ) ;
+
+        CustomBurger customBurger2 = new CustomBurger( "Build Your Own Burger" ) ;
+        // base price for 1/2 lb and Organic Bison*
+        Burger b2 = new Burger( "Burger Options" ) ;
+        String[] bo2 = { "Hormone & Antibiotic Free Beef*", "1/3lb.", "On A Bun" } ;
+        b2.setOptions( bo2 ) ;
+        // 1 cheese free, extra cheese +1.00
+        Cheese c2 = new Cheese( "Cheese Options" ) ;
+        String[] co2 = { "Smoked Gauda", "Greek Feta" } ;
+        c2.setOptions( co2 ) ;
+        c2.wrapDecorator( b2 ) ;
+        // premium cheese +1.50
+        CheeseTopping pc2 = new CheeseTopping( "Premium Cheese Options" ) ;
+        String[] pco2 = { "Fresh Mozzarella"} ;
+        pc2.setOptions( pco2 ) ;
+        pc2.wrapDecorator( c2 ) ;
+        // 1 sauce free, extra +.50
+        Sauce s2 = new Sauce( "Sauce Options" ) ;
+        String[] so2 = { "Habanero Salsa" } ;
+        s2.setOptions( so2 ) ;
+        s2.wrapDecorator( pc2 ) ;
+        // unlimited toppings free
+        Toppings t2 = new Toppings( "Toppings Options" ) ;
+        String[] to2 = { "Crushed Peanuts" } ;
+        t2.setOptions( to2 ) ;
+        t2.wrapDecorator( s2 ) ;
+        // premium topping, price based on selection
+        PremiumTopping pt2 = new PremiumTopping( "Premium Toppings Options" ) ;
+        String[] pto2 = { "Sunny Side Up Egg*", "Marinated Tomatoes" } ;
+        pt2.setOptions( pto2 ) ;
+        pt2.wrapDecorator( t2 ) ;
+        // bun, price based on selection
+        Bun bun2 = new Bun( "Bun Options" ) ;
+        String[] buno2 = { "Gluten-Free Bun" } ;
+        bun2.setOptions( buno2 ) ;
+        bun2.wrapDecorator( pt2 ) ;
+        //Side +3.00
+        Side side2 = new Side( "Side Options" ) ;
+        String[] sideo2 = { "Shoestring Fries" } ;
+        side2.setOptions( sideo2 ) ;
+        side2.wrapDecorator( bun2 ) ;
+
+        // Setup Custom Burger Ingredients
+        customBurger2.setDecorator( side2 ) ;
+        customBurger2.addChild( b2 ) ;
+        customBurger2.addChild( c2 ) ;
+        customBurger2.addChild( pc2 ) ;
+        customBurger2.addChild( s2 ) ;
+        customBurger2.addChild( t2 ) ;
+        customBurger2.addChild( pt2 ) ;
+        customBurger2.addChild( bun2 ) ;
+        customBurger2.addChild( side2 ) ;
+
         // Add Custom Burger to the ORder
-        order.addChild( customBurger );
+        order.addChild( customBurger1 );
+        order.addChild( customBurger2 );
         return order ;
     }
 
 }
 
-
 /*
 Counter Burger Menu:
 https://thecounterburger.emn8.com/?store=Times%20Square
-*/
+ */

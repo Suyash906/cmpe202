@@ -4,11 +4,8 @@ public class Client {
 
     public static void runTest()
     {
-        Component firstOrder = BuildOrder.getFirstOrder() ;
+        Component firstOrder = BuildOrder.getOrder() ;
         firstOrder.printDescription();
-        
-        Component secondOrder = BuildOrder.getSecondOrder() ;
-        secondOrder.printDescription();
 
     }
 }

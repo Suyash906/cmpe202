@@ -21,8 +21,10 @@ public class PremiumTopping extends LeafDecorator
         this.options = options ;
         for ( int i = 0; i<options.length; i++ )
         {
-            this.price += 1 ;
-            if ( "Marinated Tomatoes".equals(options[i]) ) this.price += 2 ;
+            if ( "Marinated Tomatoes".equals(options[i]) )
+                this.price += 3.00 ;
+            else 
+                this.price += 1.00 ;
         }
     }
     

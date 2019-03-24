@@ -18,7 +18,8 @@ public class Side extends LeafDecorator
     public void setOptions( String[] options )
     {
         this.options = options ;
-        this.price+=3;
+        if ( options.length > 0 )
+            this.price += (options.length) * 3.00 ;
         
     }
     
