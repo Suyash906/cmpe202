@@ -5,7 +5,6 @@ public class CreditCardCVC implements IDisplayComponent, IKeyEventHandler
 
 	private IKeyEventHandler nextHandler ;
 	private String cvc = "" ;
-	private int count = 0;
 
     public void setNext( IKeyEventHandler next) {
     	this.nextHandler = next ;
@@ -19,14 +18,13 @@ public class CreditCardCVC implements IDisplayComponent, IKeyEventHandler
 	}
 
 	public void key(String ch, int cnt) {
-		if ( count >= 0  ) {
-			if ( count >= 0 && count <= 2 ) {
-				if(ch.equals("X") && cvc.length()>0){
-					cvc = cvc.substring(0,cvc.length()-1);
-					count--;
+		if ( cnt >= 21  ) {
+			if ( cnt >= 21 && cnt <= 23 ) {
+				int cvcLength = cvc.length();
+				if(ch.equals("X") && cvcLength>0){
+					cvc = cvc.substring(0,cvcLength-1);
 				} else {
 					cvc += ch;
-					count++;
 				}
 
 			}

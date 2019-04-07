@@ -39,8 +39,29 @@ public class App {
     }
 
     public void key(String ch) {
-        count++;
-        screen.key(ch, count);
+        if(isValidInput(ch)){
+            if(ch.equalsIgnoreCase("X")) {
+                if(count>0) {
+                    screen.key(ch, count);
+                    count--;
+                }
+            }
+            else {
+                if(count<=22) {
+                    count++;
+                    screen.key(ch, count);
+                }
+            }
+        }
+
+    }
+
+    public boolean isValidInput(String ch){
+        boolean isValid = false;
+        if(ch.matches("[0-9]") || ch.equalsIgnoreCase("X")){
+            isValid = true;
+        }
+        return isValid;
     }
 
 }
