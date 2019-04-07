@@ -6,16 +6,16 @@
 public class App {
 
     private Screen screen;
-    private CreditCardNum num;
-    private CreditCardExp exp;
+    private IDisplayComponent num;
+    private IDisplayComponent exp;
     private CreditCardCVC cvc;
     private int count;
 
     public App() {
 
         screen = new Screen();
-        num = new CreditCardNum();
-        exp = new CreditCardExp();
+        num = new FourDigitSpacerDecorator(new CreditCardNum());
+        exp = new SlashDecorator(new CreditCardExp());
         cvc = new CreditCardCVC();
 
         screen.addSubComponent(num);

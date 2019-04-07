@@ -11,18 +11,11 @@ public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
     	this.nextHandler = next ;
     }
 
-	@Override
-	public String operation() {
-		return date;
-	}
-
 	public String display() {
 		if ( date.equals("") )
-			return "[MM/YY]" + "  " ;
+			return "MMYY" ;
 		else{
-			IDisplayComponent component = new SlashDecorator(this);
-			String result = component.operation();
-			return "["+result+"]  ";
+			return date;
 		}
 	}	
 

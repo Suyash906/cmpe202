@@ -18,11 +18,6 @@ public class CreditCardCVC implements IDisplayComponent, IKeyEventHandler
 			return "[" + cvc + "]" + "  " ;
 	}
 
-	@Override
-	public String operation() {
-		return null;
-	}
-
 	public void key(String ch, int cnt) {
 		if ( count >= 0  ) {
 			if ( count >= 0 && count <= 2 ) {

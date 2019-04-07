@@ -1,15 +1,31 @@
 /* (c) Copyright 2018 Paul Nguyen. All Rights Reserved */
 
-public class FourDigitSpacerDecorator  extends CardDecorator{
+public class FourDigitSpacerDecorator   implements IDisplayComponent, IKeyEventHandler{
     private String addedState;
+    IDisplayComponent component;
     public FourDigitSpacerDecorator(IDisplayComponent component){
-        super(component);
+        this.component = component;
     }
 
     @Override
-    public String operation() {
-        addedState = super.operation();
-        return addedBehaviour(addedState);
+    public String display() {
+        addedState = component.display();
+        return "["+addedBehaviour(addedState)+"]   ";
+    }
+
+    @Override
+    public void setNext(IKeyEventHandler next) {
+        ((CreditCardNum)component).setNext(next);
+    }
+
+    @Override
+    public void key(String ch, int cnt) {
+        ((CreditCardNum)component).key(ch, cnt);
+    }
+
+    @Override
+    public void addSubComponent(IDisplayComponent c) {
+        ((CreditCardNum)component).addSubComponent(c);
     }
 
     /**

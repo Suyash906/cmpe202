@@ -39,11 +39,6 @@ public class Screen implements IScreen, IDisplayComponent
         return value ; 
     }
 
-    @Override
-    public String operation() {
-        return null;
-    }
-
     public String name() {
         return (this.getClass().getName()) ; 
     }

@@ -1,15 +1,31 @@
 /* (c) Copyright 2018 Paul Nguyen. All Rights Reserved */
 
-public class SlashDecorator extends CardDecorator{
+public class SlashDecorator implements IDisplayComponent, IKeyEventHandler{
     private String addedState;
+    IDisplayComponent component;
     public SlashDecorator(IDisplayComponent component){
-        super(component);
+        this.component = component;
     }
 
     @Override
-    public String operation() {
-        addedState = super.operation();
-        return addedBehaviour(addedState);
+    public String display() {
+        addedState = component.display();
+        return "[" + addedBehaviour(addedState)+ "]  ";
+    }
+
+    @Override
+    public void setNext(IKeyEventHandler next) {
+        ((CreditCardExp)component).setNext(next);
+    }
+
+    @Override
+    public void key(String ch, int cnt) {
+        ((CreditCardExp)component).key(ch, cnt);
+    }
+
+    @Override
+    public void addSubComponent(IDisplayComponent c) {
+        ((CreditCardExp)component).addSubComponent(c);
     }
 
     /**

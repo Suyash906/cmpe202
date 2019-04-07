@@ -11,18 +11,11 @@ public class CreditCardNum implements IDisplayComponent, IKeyEventHandler
     	this.nextHandler = next ;
     }
 
-	@Override
-	public String operation() {
-		return number;
-	}
-
 	public String display() {
 		if ( number.equals("") )
-			return "[4444 4444 4444 4444]" + "  " ;
+			return "4444444444444444"  ;
 		else{
-			IDisplayComponent component = new FourDigitSpacerDecorator(this);
-			String result = component.operation();
-			return "["+result+"]  ";
+			return number;
 		}
 	}	
 
