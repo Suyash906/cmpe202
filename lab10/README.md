@@ -10,3 +10,25 @@ Gumball Machine Problem
 
 #### Lab 10 Approach
 - With the feature Id approach, config file can be used to fit in all crank model as well as slot model.
+
+#### Output Screenshots
+- Crank Model - 25 cents 
+<img src="screenshots/1_Crank_25_1.png">
+
+<img src="screenshots/1_Crank_25_2.png">
+
+- Crank Model - 50 cents 
+<img src="screenshots/2_Crank_50_1.png">
+
+<img src="screenshots/2_Crank_50_2.png">
+
+
+- Slot Model - 25 cents 
+<img src="screenshots/3_Slot_25_1.png">
+
+<img src="screenshots/3_Slot_25_2.png">
+
+- Slot Model - 50 cents 
+<img src="screenshots/4_Slot_50_1.png">
+
+<img src="screenshots/4_Slot_50_2.png">
